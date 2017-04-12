@@ -35,8 +35,8 @@ namespace AllenXamarinTest
 
 				string headeri = traceidval();
 				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
-				client.DefaultRequestHeaders.Add("X-B3-TraceId", headeri);
-				client.DefaultRequestHeaders.Add("X-B3-SpanId", "9cd05ebcecdd2376");
+				client.DefaultRequestHeaders.Add("X-B3-TraceId", "DotnetAPPTraceID");
+				client.DefaultRequestHeaders.Add("X-B3-SpanId", "SOMESPANID123");
 
 				//sending the call
 				var task = client.SendAsync(request);
@@ -72,19 +72,20 @@ namespace AllenXamarinTest
 		//go get the traceid value from the request
 		private string traceidval() 
 		{
-			if (Request.Headers.GetValues("X-B3-TraceId") != null)
-			{
-				IEnumerable<string> headers = Request.Headers.GetValues("X-B3-TraceId");
+            
+            //if (Request.Headers.GetValues("X-B3-TraceId") != null)
+            //{
+            IEnumerable<string> headers = Request.Headers.GetValues("X-B3-TraceId");
 				//IEnumerable<string> spanheaders = Request.Headers.GetValues("X-B3-SpanId");
 				//The above returns an array even though we only get one per request so using the linq firstordefault to get the value
 				string traceid = headers.FirstOrDefault();
 				return traceid;
-			}
-			else
+			//}
+			//else
 
-			{
-				return null; 
-			}
+			//{
+				//return null; 
+			//}
 		}
 
 }
