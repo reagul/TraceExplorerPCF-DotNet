@@ -25,7 +25,7 @@ namespace AllenXamarinTest
 				var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, new Uri("https://fullback.cfapps.pez.pivotal.io"));
 				
-				string headeri = traceidval();
+				//string headeri = traceidval();
 				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
 				request.Headers.Add("X-B3-TraceId", "DotnetAPPTraceID");
 				request.Headers.Add("X-B3-SpanId", "CALLSPANID");
