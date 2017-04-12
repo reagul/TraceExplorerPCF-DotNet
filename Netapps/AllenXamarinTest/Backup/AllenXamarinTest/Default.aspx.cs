@@ -29,7 +29,7 @@ namespace AllenXamarinTest
 				var client = new HttpClient();
 				var request = new HttpRequestMessage()
 				{
-					RequestUri = new Uri("https://fullback.cfapps.pez.pivotal.io"),
+					RequestUri = new Uri("https://fullback.cfapps.io"),
 					Method = HttpMethod.Get,
 				};
 
