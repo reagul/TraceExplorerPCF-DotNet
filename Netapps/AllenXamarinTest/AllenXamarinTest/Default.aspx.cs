@@ -22,28 +22,20 @@ namespace AllenXamarinTest
 			log("Thisapp", "Received a call");
 
 
-			//replace with some test
-			string v = "prop";
-			if (v == "l")
-			{
 				var client = new HttpClient();
-				var request = new HttpRequestMessage()
-				{
-					RequestUri = new Uri("https://fullback.cfapps.pez.pivotal.io"),
-					Method = HttpMethod.Get,
-				};
-
+            var request = new HttpRequestMessage(HttpMethod.Get, new Uri("https://fullback.cfapps.pez.pivotal.io"));
+				
 				string headeri = traceidval();
 				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
-				client.DefaultRequestHeaders.Add("X-B3-TraceId", "DotnetAPPTraceID");
-				client.DefaultRequestHeaders.Add("X-B3-SpanId", "SOMESPANID123");
+				request.Headers.Add("X-B3-TraceId", "DotnetAPPTraceID");
+				request.Headers.Add("X-B3-SpanId", "CALLSPANID");
 
 				//sending the call
 				var task = client.SendAsync(request);
 
 				//this logs the call result.  This won't show up in trace explorer as it misses the [app, traceid, spanid, true] formatting 
 				Console.WriteLine(task.Result.ToString());
-			}
+			
 			
 
 		}
@@ -54,11 +46,10 @@ namespace AllenXamarinTest
 			if (Request.Headers.GetValues("X-B3-TraceId") != null)
 			{
 
-				IEnumerable<string> headers = Request.Headers.GetValues("X-B3-TraceId");
-				IEnumerable<string> spanheaders = Request.Headers.GetValues("X-B3-SpanId");
+				string headeri = Request.Headers ["X-B3-TraceId"];
+				string spani = Request.Headers ["X-B3-SpanId"];
 				//The above returns an array even though we only get one per request so using the linq firstordefault to get the value
-				string headeri = headers.FirstOrDefault();
-				string spani = spanheaders.FirstOrDefault();
+				
 
 				Console.WriteLine("[" + appname + ", " + headeri + ", " + spani + ", true] " + logmessage);
 			}
@@ -75,10 +66,10 @@ namespace AllenXamarinTest
             
             //if (Request.Headers.GetValues("X-B3-TraceId") != null)
             //{
-            IEnumerable<string> headers = Request.Headers.GetValues("X-B3-TraceId");
+            string traceid = Request.Headers ["X-B3-TraceId"];
 				//IEnumerable<string> spanheaders = Request.Headers.GetValues("X-B3-SpanId");
 				//The above returns an array even though we only get one per request so using the linq firstordefault to get the value
-				string traceid = headers.FirstOrDefault();
+				
 				return traceid;
 			//}
 			//else

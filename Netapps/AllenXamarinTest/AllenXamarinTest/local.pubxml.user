@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AllenXamarinTest.dll">
-      <publishTime>04/12/2017 08:34:13</publishTime>
+      <publishTime>04/12/2017 08:52:03</publishTime>
     </File>
     <File Include="Default.aspx">
       <publishTime>04/12/2017 07:59:03</publishTime>
