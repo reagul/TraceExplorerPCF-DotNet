@@ -2,6 +2,8 @@ README
 
 NOTE: If these hosts are taken on PCF, you might need to modify the dotnet app { to point to the right REST URL }, which you will get once you are successful in pushing the BootREST app. 
 
+Also a clean way to do test would be to delete the Apps on PCF with "cf delete appname" and re-push app. 
+
 
 -First Push the Apps . 
 
