@@ -1,4 +1,0 @@
-C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\Netapps\AllenXamarinTest\AllenXamarinTest\bin\AllenXamarinTest.dll.config
-C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\Netapps\AllenXamarinTest\AllenXamarinTest\bin\AllenXamarinTest.dll
-C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\Netapps\AllenXamarinTest\AllenXamarinTest\obj\Release\AllenXamarinTest.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\Netapps\AllenXamarinTest\AllenXamarinTest\obj\Release\AllenXamarinTest.dll
