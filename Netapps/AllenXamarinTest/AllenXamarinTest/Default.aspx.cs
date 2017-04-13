@@ -42,7 +42,7 @@ namespace AllenXamarinTest
                 responseString = data;
             }
 
-            Console.WriteLine("Data from response " + data);
+            Console.WriteLine("Data from response ....  " + responseString);
         }
 
 		public void log(string appname, string logmessage)
