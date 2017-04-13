@@ -24,3 +24,7 @@ Curl Command
 
 4>  curl https://xamarin.cfapps.pez.pivotal.io
 
+5> To build the dotnet App from groundup, get into the Dotnet/AllenXamarinTest folder, which forms the source for the Dotnet Publish artifact.
+
+https://github.com/reagul/TraceExplorerPCF-DotNet/tree/master/DotnetApp/AllenXamarinTest
+
