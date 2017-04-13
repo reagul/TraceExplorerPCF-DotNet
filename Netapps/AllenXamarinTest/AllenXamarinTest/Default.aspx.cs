@@ -23,21 +23,25 @@ namespace AllenXamarinTest
 
 
 				var client = new HttpClient();
+            //var request = new HttpRequestMessage(HttpMethod.Get, new Uri("https://fullback.cfapps.pez.pivotal.io"));
+
+            string responseString;
+
+            string traceid = Request.Headers["X-B3-TraceId"];
+           
+
             var request = new HttpRequestMessage(HttpMethod.Get, new Uri("https://fullback.cfapps.pez.pivotal.io"));
-				
-				//string headeri = traceidval();
-				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
-				request.Headers.Add("X-B3-TraceId", "DotnetAPPTraceID");
-				request.Headers.Add("X-B3-SpanId", "CALLSPANID");
-            Console.WriteLine("565656" + (request.Headers.ToString()));
+            request.Headers.Add("X-B3-Traceid", traceid);
+            request.Headers.Add("X-B3-SpanId", "11111");
+            string data;
 
-            //sending the call
-            HttpResponseMessage  response = client.SendAsync(request).Result;
+            using (client = new HttpClient())
+            {
+                HttpResponseMessage response = client.SendAsync(request).Result;
+                data = response.Content.ReadAsStringAsync().Result;
+                responseString = data;
+            }
 
-				//this logs the call result.  This won't show up in trace explorer as it misses the [app, traceid, spanid, true] formatting 
-				
-
-            string data = response.Content.ReadAsStringAsync().Result;
             Console.WriteLine("Data from response " + data);
         }
 
