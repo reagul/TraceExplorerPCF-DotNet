@@ -34,10 +34,10 @@ namespace AllenXamarinTest
 				string headeri = traceidval();
 				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
 				client.DefaultRequestHeaders.Add("X-B3-TraceId", headeri);
-				client.DefaultRequestHeaders.Add("X-B3-SpanId", "9cd05ebcecdd2376");
-
-				//sending the call
-				var task = client.SendAsync(request);
+				//client.DefaultRequestHeaders.Add("X-B3-SpanId", "9cd05ebcecdd2376");
+                 client.DefaultRequestHeaders.Add("X-B3-SpanId", "DOTNETSPANID");
+            //sending the call
+            var task = client.SendAsync(request);
 
 				//this logs the call result.  This won't show up in trace explorer as it misses the [app, traceid, spanid, true] formatting 
 				log("This here app", (task.Result.ToString()));
