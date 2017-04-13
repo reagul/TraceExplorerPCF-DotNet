@@ -14,7 +14,7 @@ If you know how to modify the Dotnet app and Publish, you know wha to do to get 
 
 Build and Push Spring Boot app : Do this from inside the  SpringREST folder 
 
-2> maven package 
+2> maven package or just modify the manifest and add the right path to the REST jar and cf push 
 
 3> cf push 
 
