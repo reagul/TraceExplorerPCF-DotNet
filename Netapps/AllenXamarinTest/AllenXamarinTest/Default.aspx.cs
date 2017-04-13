@@ -31,15 +31,15 @@ namespace AllenXamarinTest
 				request.Headers.Add("X-B3-SpanId", "CALLSPANID");
             Console.WriteLine("565656" + (request.Headers.ToString()));
 
-				//sending the call
-				var task = client.SendAsync(request);
+            //sending the call
+            HttpResponseMessage  response = client.SendAsync(request).Result;
 
 				//this logs the call result.  This won't show up in trace explorer as it misses the [app, traceid, spanid, true] formatting 
-				Console.WriteLine(task.Result.ToString());
-			
-			
+				
 
-		}
+            string data = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine("Data from response " + data);
+        }
 
 		public void log(string appname, string logmessage)
 		{
