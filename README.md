@@ -32,4 +32,4 @@ Credits : Allen Duet and Richard Seroter @ Pivotal
 
 @@@@@@@@@@@@
 
-![alt tag](https://github.com/reagul/TraceExplorerPCF-DotNet/edit/master/DotNetTrace-Sample.png)
+![alt tag](https://github.com/reagul/TraceExplorerPCF-DotNet/blob/master/DotNetTrace-Sample.png)
