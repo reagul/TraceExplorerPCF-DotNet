@@ -1,6 +1,6 @@
 README
 
-NOTE: If these hosts are taken on PCF, you might need to modify the dotnet app { to point to the right REST URL }, which you will get once you are successful in pushing the Spring REST app. 
+NOTE: If these hosts are taken on PCF, you might need to modify the dotnet app { to point to the right REST URL }, which you will get once you are successful in pushing the BootREST app. 
 
 
 First Push the Apps . 
@@ -9,10 +9,10 @@ Directly Push Dotnet app from inside the Push-to-CF folder. This is a compiled /
 
 1> cf push xamarin  -b hwc_buildpack -s windows2012R2
 
-If you know how to modify the Dotnet app and Publish, you know wha to do to get to a PCF ready artifct . The Push-to-CF folder is meant for ready test and points to hard coded Backing SpringBoot REST app. 
+If you know how to modify the Dotnet app and Publish, you know wha to do to get to a PCF ready artifct . The Push-to-CF folder is meant for ready test and points to hard coded Backing Boot REST app. 
 
 
-Build and Push Spring Boot app : Do this from inside the  SpringREST folder 
+Build and Push Spring Boot app : Do this from inside the  BootREST folder 
 
 2> maven package or just modify the manifest and add the right path to the REST jar and cf push 
 
