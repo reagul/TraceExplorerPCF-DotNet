@@ -28,7 +28,7 @@ namespace AllenXamarinTest
             string responseString;
 
             string traceid = Request.Headers["X-B3-TraceId"];
-           
+            Console.WriteLine("TRACE ID IS " + traceid);
 
             var request = new HttpRequestMessage(HttpMethod.Get, new Uri("https://fullback.cfapps.pez.pivotal.io"));
             request.Headers.Add("X-B3-Traceid", traceid);
