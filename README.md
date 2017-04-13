@@ -11,7 +11,7 @@ Directly Push Dotnet app from inside the Push-to-CF folder. This is a compiled /
 
 1> cf push xamarin  -b hwc_buildpack -s windows2012R2
 
-If you know how to modify the Dotnet app and Publish, you know wha to do to get to a PCF ready artifct . The Push-to-CF folder is meant for ready test and points to hard coded Backing Boot REST app. 
+The Push-to-CF folder is meant for ready built Dotnet artifact making it easy to TEST and the Dotnet app points to hard coded Backing Boot REST app URL. So if the hosts are taken on your PCF ORG,you will need to rebuild the BootREST and Dotnet app again.  
 
 
 -Build and Push Spring Boot app : Do this from inside the  BootREST folder 
