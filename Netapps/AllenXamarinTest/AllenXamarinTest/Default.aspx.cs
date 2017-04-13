@@ -29,6 +29,7 @@ namespace AllenXamarinTest
 				//You have to add both a traceid and spanid header, otherwise Gorouter overwrites the traceID, it doesn't really matter what spanid you use as the router will replace with it's own span identifier in current release
 				request.Headers.Add("X-B3-TraceId", "DotnetAPPTraceID");
 				request.Headers.Add("X-B3-SpanId", "CALLSPANID");
+            Console.WriteLine("565656" + (request.Headers.ToString()));
 
 				//sending the call
 				var task = client.SendAsync(request);
