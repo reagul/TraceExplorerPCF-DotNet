@@ -1,0 +1,4 @@
+C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\AllenXamarinTest-2\AllenXamarinTest\bin\AllenXamarinTest.dll.config
+C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\AllenXamarinTest-2\AllenXamarinTest\bin\AllenXamarinTest.dll
+C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\AllenXamarinTest-2\AllenXamarinTest\obj\Release\AllenXamarinTest.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\XAMARIN2\xamarin2\AllenXamarinTest-2\AllenXamarinTest\obj\Release\AllenXamarinTest.dll
